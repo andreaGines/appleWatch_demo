@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Tip_Calculator_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <separator alignment="left" id="Xje-wr-Dyl">
+                            <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label alignment="left" text="Cost of Service:" id="N2j-g5-mnz">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
+                        <label width="1" alignment="left" text="$0.0" textAlignment="center" id="bnx-iO-0cg">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                        <slider width="1" alignment="left" continuous="YES" maximum="100" steps="100" id="bIm-Zl-NAu">
+                            <color key="color" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="sliderChanged:" destination="AgC-eL-Hgc" id="vEK-cp-Kan"/>
+                            </connections>
+                        </slider>
+                        <separator alignment="left" id="Czq-fk-i9P">
+                            <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <group width="136" alignment="left" id="oo8-Px-3yM">
+                            <items>
+                                <label alignment="left" text="Tip:" id="Ga1-OW-Leu">
+                                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                                </label>
+                                <label width="49" alignment="left" text="0%" textAlignment="center" id="C8J-qd-5de">
+                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="QpZ-Sh-UMh">
+                            <items>
+                                <button width="0.33329999999999999" alignment="left" title="10%" id="FfZ-zG-mWv">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                    <connections>
+                                        <action selector="tip10" destination="AgC-eL-Hgc" id="JYs-ty-hHC"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33329999999999999" alignment="left" title="15%" id="a7d-Tu-fj8">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                    <connections>
+                                        <action selector="tip15" destination="AgC-eL-Hgc" id="fnr-2g-oPH"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33329999999999999" alignment="left" title="20%" id="Zfi-HW-MxK">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="0.90000000000000002" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="16"/>
+                                    <connections>
+                                        <action selector="tip20" destination="AgC-eL-Hgc" id="LJ6-MR-TSn"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.70999999999999996" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="dollarLabel" destination="bnx-iO-0cg" id="1BB-Zu-ek3"/>
+                        <outlet property="tipLabel" destination="C8J-qd-5de" id="bOm-IX-DXJ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="105" y="246.5"/>
+        </scene>
+        <!--resultsController-->
+        <scene sceneID="dZY-kN-pxu">
+            <objects>
+                <controller identifier="resultsController" id="EJE-Wl-UKM" customClass="ResultsController" customModule="Tip_Calculator_WatchKit_Extension">
+                    <items>
+                        <separator alignment="left" id="gL0-hO-Gbt">
+                            <color key="color" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </separator>
+                        <label alignment="left" text="Cost of Meal:" id="K9m-MZ-7gg">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                        <label width="1" alignment="left" text="$25" textAlignment="right" id="h7f-eL-R1P">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                        <label alignment="left" text="20% Tip:" id="RBR-c7-KRX">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                        <label width="1" alignment="left" text="$5" textAlignment="right" id="89z-o6-qmw">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                        <label alignment="left" text="Total Cost:" id="a0a-sg-eg0">
+                            <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                        <label width="1" alignment="left" text="$30" textAlignment="right" id="it0-4A-7en">
+                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="17"/>
+                        </label>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.70999999999999996" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <outlet property="costOfMealLabel" destination="h7f-eL-R1P" id="z1w-dS-Q0h"/>
+                        <outlet property="mealTotalLabel" destination="it0-4A-7en" id="FN7-Hb-xtH"/>
+                        <outlet property="tipAmountLabel" destination="89z-o6-qmw" id="1xX-me-kU1"/>
+                        <outlet property="tipLabel" destination="RBR-c7-KRX" id="r8z-b8-viN"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="675" y="252"/>
+        </scene>
+    </scenes>
+</document>
